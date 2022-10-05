@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JapaneceST</title>
+    <!-- Подключение .css -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    
+    	<!-- Обязательный (и достаточный) тег для браузеров -->
+	<link type="image/x-icon" rel="shortcut icon" href="./icons/JsT.png">
+	    
+</head>
+<!-- -->
+<body>
+    
+    <!-- header сайта -->
+    <header class ="header" >
+        <div class="wrapper">      
+            <div class="header__wrapper">
+                
+                <nav class="header__nav">
+                    <ul class="header__list">
+                        <li class="header__item">
+                            <a href="#Главная" class="header__link js-scroll">Главная</a>
+                        </li>
+                        <li class="header__item">
+                            <a href="#Услуги" class="header__link js-scroll">Услуги</a>
+                        </li>
+                        <li class="header__item">
+                            <a href="#Ответы" class="header__link js-scroll">Ответы на вопросы</a>
+                        </li>
+                        
+                        <li>
+                            <form>
+                                <script type="text/javascript"></script>
+                                <input type="text" placeholder="Search..." id="text-to-find" value="" class="find_form">
+                                <input class="find_button" type="button" onclick="javascript: FindOnPage('text-to-find'); return false;" value="Search">
+                            </form> 
+                            
+                            
+                        </li>
+                    </ul>
+                </nav>
+                <div class="header__logo">
+                    <a href="./main.php" class="header__logo-link"> 
+                        <img src="./img/JsT.png" alt="JapaneceST" class="header__logo-pic">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Основная часть сайта -->
+    <main class="main" id="Главная">
+        <h1 class="logo_text">Japanece ST</h1>
+        <h2 class="logo_text_under">Студия оклейки авто Japanece ST. Мы осуществляем обтяжку в виниловые пленки в стиле аниме</h2>
+        
+        <ul>
+            <li class="adress">Адрес: </li>
+            <li class="phone">Телефон:</li>
+            <li class="time">Режим работы:</li>
+            
+        </ul>
+        
+        <ul>
+            <li class="adress_under">Город толстой улица пушкина дом колотушкина</li>
+            <li class="phone_under"> 8 (800) 555-35-35 8 (967) 774-18-59</li>
+            <li class="time_under"> пн-пт : 10:00 - 20:00 сб-вск : Смотрим аниме </li>
+        
+        </ul>
+        
+        <img class="first_slider" 
+        src="img/first%20slider.png">    
+        
+        <div class="text_frame">
+            <ul>
+                <li class="tab_1">МАТЕРИАЛЫ ОТ ЛУЧШИХ КОМПАНИЙ</li>
+                <div class="text_1">
+                    <?php
+                     $f = fopen("text_1.txt", "r");
+                     echo fgets($f);
+                     fclose($f);
+                     ?>
+                </div>   
+                <li class="tab_2">ОПЫТНЫЕ МАСТЕРА</li>
+                <div class="text_2">
+                    <?php
+                     $f = fopen("text_2.txt", "r");
+                     echo fgets($f);
+                     fclose($f);
+                     ?>
+                </div>
+                <li class="tab_3">ГАРАНТИЯ НА ВСЕ ВИДЫ РАБОТ</li>
+                <div class="text_3">
+                    <?php
+                     $f = fopen("text_3.txt", "r");
+                     echo fgets($f);
+                     fclose($f);
+                     ?>
+                </div>
+            </ul>
+        </div>
+        
+        <img class="second_slider" src="img/BMW.png">
+        <h3 class="slider_under">дорогая японская пленка очень красиво смотрится даже на bmw</h3>
+        
+        
+        <h3 class="uslugi" id="Услуги"> Наши услуги </h3>
+        <img class="servises" src="img/services%20(1).png">
+        
+   
+        
+        <h3 class="tab_4">Стоимость полной оклейки автомобиля</h3>
+        
+        <img class="table" src="img/table.png">
+        
+    </main>
+    <!-- footer сайта -->
+    
+    <footer class="footer">
+        
+        <h3 class="answer" id="Ответы">ответим на любой вопрос</h3>
+        
+        <script type="text/javascript" src="./jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="./ajax.js"></script>
+        
+        <form action="action.php" class="search-form">
+                <fieldset class="search-form__wrap">
+                    <p class="search-form__info">
+                        <input id="name" type="text" name="user-name" class="search-form_n" placeholder="Имя">
+                        <input id="phone" type="text" name="user-phone" class="search-form_p"placeholder="Телефон">
+                        <input id="question" type="text" name="user-question" class="search-form_q"placeholder="Вопрос по дизайну , тюнингу и др.">
+                    </p>
+                    <div class="button__1">
+                    <button id="send_form" type="submit" class="search-form__submit">Отправить</button>
+                    </div> 
+                    </fieldset>
+                </form>
+    
+    </footer>
+
+</body> 
+    <script src="./js/main.js"></script>
+    <script src="./script.js"></script>
+</html>    
